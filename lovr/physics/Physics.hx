@@ -16,16 +16,15 @@ import lovr.physics.ConeJoint;
 import lovr.physics.DistanceJoint;
 import lovr.physics.HingeJoint;
 import lovr.physics.SliderJoint;
+import haxe.extern.EitherType;
 
 /**
  * Physics module for simulation and collision.
  * https://lovr.org/docs/lovr.physics
  */
 extern class Physics {
-  /**
-   * Creates a new World.
-   */
   static function newWorld():World;
-
-     
+  static function getGravity():Array<Float>;
+  static function setGravity(x:Float, y:Float, z:Float):Void;
+  static function getWorlds():Array<World>;
 } 

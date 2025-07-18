@@ -5,15 +5,8 @@ package lovr.graphics;
  * https://lovr.org/docs/Readback
  */
 extern class Readback {
-  /**
-   * Returns whether the readback is complete.
-   */
   public function isComplete():Bool;
-
-  /**
-   * Waits for the readback to complete.
-   */
   public function wait():Bool;
-
-     
+  public function getBlob():Dynamic;
+  public function getImage():Dynamic;
 } 

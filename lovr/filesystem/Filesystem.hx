@@ -1,5 +1,6 @@
 package lovr.filesystem;
 
+import haxe.extern.EitherType;
 import lovr.filesystem.File;
 
 /**
@@ -7,28 +8,32 @@ import lovr.filesystem.File;
  * https://lovr.org/docs/lovr.filesystem
  */
 extern class Filesystem {
-  /**
-   * Checks if a file or directory exists.
-   */
   static function exists(path:String):Bool;
-
-  /**
-   * Gets the size of a file.
-   */
   static function getSize(path:String):Int;
-
-  /**
-   * Reads the contents of a file.
-   */
   static function read(path:String):String;
-
-  /**
-   * Writes data to a file.
-   */
   static function write(path:String, data:String):Void;
-
-  /**
-   * Creates a new File object.
-   */
   static function newFile(path:String):File;
+  static function append(filename:String, content:String):Int;
+  static function createDirectory(path:String):Bool;
+  static function getAppdataDirectory():String;
+  static function getDirectoryItems(path:String):Array<String>;
+  static function getExecutablePath():String;
+  static function getIdentity():String;
+  static function getLastModified(path:String):Float;
+  static function getRealDirectory(path:String):String;
+  static function getRequirePath():String;
+  static function getSaveDirectory():String;
+  static function getSource():String;
+  static function getUserDirectory():String;
+  static function getWorkingDirectory():String;
+  static function isDirectory(path:String):Bool;
+  static function isFile(path:String):Bool;
+  static function isFused():Bool;
+  static function load(filename:String):Dynamic;
+  static function mount(path:String, mountpoint:String, ?append:Bool, ?root:String):Bool;
+  static function remove(path:String):Bool;
+  static function setIdentity(identity:String):Void;
+  static function setRequirePath(path:String):Void;
+  static function setSource(identity:String):Void;
+  static function unmount(path:String):Bool;
 } 

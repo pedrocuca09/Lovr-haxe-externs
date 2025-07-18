@@ -1,29 +1,23 @@
 package lovr.filesystem;
 
+import haxe.extern.EitherType;
+
 /**
  * Represents a file in the virtual filesystem.
  * https://lovr.org/docs/File
  */
 extern class File {
-  /**
-   * Gets the name of the file.
-   */
   public function getName():String;
-
-  /**
-   * Gets the size of the file in bytes.
-   */
   public function getSize():Int;
-
-  /**
-   * Reads the contents of the file.
-   */
   public function read():String;
-
-  /**
-   * Writes data to the file.
-   */
   public function write(data:String):Void;
-
-     
+  public function open(mode:String):Bool;
+  public function close():Void;
+  public function isOpen():Bool;
+  public function getMode():String;
+  public function flush():Void;
+  public function setBuffer(mode:String, ?size:Int):Void;
+  public function getBuffer():String;
+  public function seek(whence:String, offset:Int):Int;
+  public function tell():Int;
 } 

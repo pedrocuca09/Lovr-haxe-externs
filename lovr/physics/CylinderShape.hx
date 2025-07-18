@@ -1,19 +1,14 @@
 package lovr.physics;
 
+import haxe.extern.EitherType;
+
 /**
  * Represents a cylinder shape for physics.
  * https://lovr.org/docs/CylinderShape
  */
 extern class CylinderShape {
-  /**
-   * Gets the radius of the cylinder.
-   */
   public function getRadius():Float;
-
-  /**
-   * Gets the length of the cylinder.
-   */
+  public function setRadius(radius:Float):Void;
   public function getLength():Float;
-
-     
+  public function setLength(length:Float):Void;
 } 

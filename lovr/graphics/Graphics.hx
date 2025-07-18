@@ -1,5 +1,97 @@
 package lovr.graphics;
 
+import haxe.extern.EitherType;
+
+/**
+ * Graphics module for rendering and GPU resource management.
+ * https://lovr.org/docs/lovr.graphics
+ */
 extern class Graphics {
-    methods and properties as needed for the graphics module
+  static function getDevice():Dynamic;
+  static function getFeatures():Dynamic;
+  static function getLimits():Dynamic;
+  static function newTexture(source:Dynamic):Texture;
+  static function newMesh(vertices:Dynamic, ?indices:Dynamic):Mesh;
+  static function getWindowPass():Pass;
+  static function present():Void;
+  static function wait():Void;
+  static function setBackgroundColor(r:Float, g:Float, b:Float, ?a:Float):Void;
+  static function getBackgroundColor():Array<Float>;
+  static function getStats():Dynamic;
+  static function reset():Void;
+  static function setWireframe(wireframe:Bool):Void;
+  static function isWireframe():Bool;
+  static function setWinding(winding:String):Void;
+  static function getWinding():String;
+  static function setDepthTest(compareMode:String, write:Bool):Void;
+  static function getDepthTest():Dynamic;
+  static function setBlendMode(blend:String, ?alphaBlend:String):Void;
+  static function getBlendMode():Dynamic;
+  static function setColor(r:Float, g:Float, b:Float, ?a:Float):Void;
+  static function getColor():Array<Float>;
+  static function setColorMask(r:Bool, g:Bool, b:Bool, a:Bool):Void;
+  static function getColorMask():Dynamic;
+  static function setAlphaSampling(enabled:Bool):Void;
+  static function getAlphaSampling():Bool;
+  static function setLineWidth(width:Float):Void;
+  static function getLineWidth():Float;
+  static function setPointSize(size:Float):Void;
+  static function getPointSize():Float;
+  static function setFont(font:Font):Void;
+  static function getFont():Font;
+  static function setShader(shader:Shader):Void;
+  static function getShader():Shader;
+  static function setCanvas(canvas:Dynamic):Void;
+  static function getCanvas():Dynamic;
+  static function setProjection(view:Int, matrix:Dynamic):Void;
+  static function getProjection(view:Int, ?matrix:Dynamic):Dynamic;
+  static function setViewPose(index:Int, matrix:Dynamic):Void;
+  static function getViewPose(index:Int, ?matrix:Dynamic, ?invert:Bool):Dynamic;
+  static function setDefaultFilter(mode:String, anisotropy:Float):Void;
+  static function getDefaultFilter():Dynamic;
+  static function setPixelDensity(density:Float):Void;
+  static function getPixelDensity():Float;
+  static function setMSAA(msaa:Int):Void;
+  static function getMSAA():Int;
+  static function flush():Void;
+  static function tick(label:String):Void;
+  static function tock(label:String):Float;
+  static function getDimensions():Array<Int>;
+  static function getWidth():Int;
+  static function getHeight():Int;
+  static function getViewCount():Int;
+  static function getViewAngles(view:Int):Dynamic;
+  static function getFeatures():Dynamic;
+  static function getLimits():Dynamic;
+  static function getStats():Dynamic;
+  static function getCanvas():Dynamic;
+  static function setCanvas(canvas:Dynamic):Void;
+  static function getShader():Shader;
+  static function setShader(shader:Shader):Void;
+  static function getFont():Font;
+  static function setFont(font:Font):Void;
+  static function getColor():Array<Float>;
+  static function setColor(r:Float, g:Float, b:Float, ?a:Float):Void;
+  static function getColorMask():Dynamic;
+  static function setColorMask(r:Bool, g:Bool, b:Bool, a:Bool):Void;
+  static function getAlphaSampling():Bool;
+  static function setAlphaSampling(enabled:Bool):Void;
+  static function getLineWidth():Float;
+  static function setLineWidth(width:Float):Void;
+  static function getPointSize():Float;
+  static function setPointSize(size:Float):Void;
+  static function getDefaultFilter():Dynamic;
+  static function setDefaultFilter(mode:String, anisotropy:Float):Void;
+  static function getPixelDensity():Float;
+  static function setPixelDensity(density:Float):Void;
+  static function getMSAA():Int;
+  static function setMSAA(msaa:Int):Void;
+  static function flush():Void;
+  static function tick(label:String):Void;
+  static function tock(label:String):Float;
+  static function getDimensions():Array<Int>;
+  static function getWidth():Int;
+  static function getHeight():Int;
+  static function getViewCount():Int;
+  static function getViewAngles(view:Int):Dynamic;
 } 
