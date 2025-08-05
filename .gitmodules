@@ -1,7 +1,6 @@
 [submodule "lovr-docs"]
 	path = lovr-docs
 	url = https://github.com/bjornbytes/lovr-docs
-
-[submodule "lovr"]
+[submodule "lovr-dev"]
 	path = lovr-dev
 	url = https://github.com/bjornbytes/lovr
