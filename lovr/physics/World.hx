@@ -1,24 +1,30 @@
 package lovr.physics;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a physics simulation world.
- * https://lovr.org/docs/World
- */
+@:native("lovr.physics.World")
 extern class World {
-  public function update(dt:Float):Void;
-  public function getColliderCount():Int;
-  public function getColliders():Array<Collider>;
-  public function getContacts():Array<Contact>;
-  public function step(dt:Float):Void;
-  public function getGravity():Array<Float>;
-  public function setGravity(x:Float, y:Float, z:Float):Void;
-  public function raycast(x1:Float, y1:Float, z1:Float, x2:Float, y2:Float, z2:Float, callback:Dynamic):Void;
-  public function setSleepingAllowed(allowed:Bool):Void;
-  public function isSleepingAllowed():Bool;
-  public function setTightness(tightness:Float):Void;
-  public function getTightness():Float;
-  public function setResponseTime(responseTime:Float):Void;
+  public function getAngularDamping():Float;
+  public function getCallbacks():Dynamic;
+  public function getColliderCount():Float;
+  public function getColliders():Dynamic;
+  public function getGravity():Float;
+  public function getJointCount():Float;
+  public function getJoints():Dynamic;
+  public function getLinearDamping():Float;
   public function getResponseTime():Float;
-} 
+  public function getStepCount():Float;
+  public function getTags():Dynamic;
+  public function getTightness():Float;
+  public function isCollisionEnabledBetween():Bool;
+  public function isDestroyed():Bool;
+  public function isSleepingAllowed():Bool;
+  public function newBoxCollider(?x:Float):lovr.physics.Collider;
+  public function newCapsuleCollider(?x:Float):lovr.physics.Collider;
+  public function newCollider():lovr.physics.Collider;
+  public function newConvexCollider(?x:Float):lovr.physics.Collider;
+  public function newCylinderCollider(?x:Float):lovr.physics.Collider;
+  public function newMeshCollider():lovr.physics.Collider;
+  public function newSphereCollider(?x:Float):lovr.physics.Collider;
+  public function overlapShape():lovr.physics.Collider;
+  public function queryBox():lovr.physics.Collider;
+  public function querySphere():lovr.physics.Collider;
+}

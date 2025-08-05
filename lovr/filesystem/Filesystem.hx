@@ -1,39 +1,62 @@
 package lovr.filesystem;
 
-import haxe.extern.EitherType;
-import lovr.filesystem.File;
-
-/**
- * Filesystem module for file and directory operations.
- * https://lovr.org/docs/lovr.filesystem
- */
+@:native("lovr.filesystem")
 extern class Filesystem {
-  static function exists(path:String):Bool;
-  static function getSize(path:String):Int;
-  static function read(path:String):String;
-  static function write(path:String, data:String):Void;
-  static function newFile(path:String):File;
-  static function append(filename:String, content:String):Int;
-  static function createDirectory(path:String):Bool;
-  static function getAppdataDirectory():String;
-  static function getDirectoryItems(path:String):Array<String>;
-  static function getExecutablePath():String;
-  static function getIdentity():String;
-  static function getLastModified(path:String):Float;
-  static function getRealDirectory(path:String):String;
-  static function getRequirePath():String;
-  static function getSaveDirectory():String;
-  static function getSource():String;
-  static function getUserDirectory():String;
-  static function getWorkingDirectory():String;
-  static function isDirectory(path:String):Bool;
-  static function isFile(path:String):Bool;
-  static function isFused():Bool;
-  static function load(filename:String):Dynamic;
-  static function mount(path:String, mountpoint:String, ?append:Bool, ?root:String):Bool;
-  static function remove(path:String):Bool;
-  static function setIdentity(identity:String):Void;
-  static function setRequirePath(path:String):Void;
-  static function setSource(identity:String):Void;
-  static function unmount(path:String):Bool;
-} 
+  public function append():Float;
+  public function createDirectory():Bool;
+  public function getAppdataDirectory():String;
+  public function getDirectoryItems():Dynamic;
+  public function getExecutablePath():String;
+  public function getIdentity():String;
+  public function getLastModified():Float;
+  public function getRealDirectory():String;
+  public function getRequirePath():String;
+  public function getSaveDirectory():String;
+  public function getSize():Float;
+  public function getSource():String;
+  public function getUserDirectory():String;
+  public function getWorkingDirectory():String;
+  public function isDirectory():Bool;
+  public function isFile():Bool;
+  public function isFused():Bool;
+  public function load():Dynamic;
+  public function mount():Bool;
+  public function newBlob():lovr.data.Blob;
+  public function newFile():lovr.filesystem.File;
+  public function read():String;
+  public function remove():Bool;
+  public function setRequirePath(path:String):Void;
+  public function unmount():Bool;
+  public function write():Bool;
+  public function filesystemAppend():String;
+  public function filesystemCreateDirectory():String;
+  public function filesystemGetAppdataDirectory():String;
+  public function filesystemGetDirectoryItems():String;
+  public function filesystemGetBundlePath():String;
+  public function filesystemGetExecutablePath():String;
+  public function filesystemGetIdentity():String;
+  public function filesystemGetLastModified():String;
+  public function filesystemGetRealDirectory():String;
+  public function filesystemGetRequirePath():String;
+  public function filesystemGetSaveDirectory():String;
+  public function filesystemGetSize():String;
+  public function filesystemGetSource():String;
+  public function filesystemGetUserDirectory():String;
+  public function filesystemGetWorkingDirectory():String;
+  public function filesystemIsDirectory():String;
+  public function filesystemIsFile():String;
+  public function filesystemIsFused():String;
+  public function filesystemLoad():String;
+  public function filesystemMount():String;
+  public function filesystemNewBlob():String;
+  public function filesystemRead():String;
+  public function filesystemRemove():String;
+  public function filesystemSetIdentity():String;
+  public function filesystemSetRequirePath():String;
+  public function filesystemSetSource():String;
+  public function filesystemUnmount():String;
+  public function filesystemUnwatch():String;
+  public function filesystemWatch():String;
+  public function filesystemWrite():String;
+  public function filesystemNewFile():String;
+}

@@ -1,12 +1,10 @@
 package lovr.graphics;
 
-/**
- * Represents a GPU readback operation.
- * https://lovr.org/docs/Readback
- */
+@:native("lovr.graphics.Readback")
 extern class Readback {
+  public function getBlob():lovr.data.Blob;
+  public function getData():Dynamic;
+  public function getImage():lovr.data.Image;
   public function isComplete():Bool;
   public function wait():Bool;
-  public function getBlob():Dynamic;
-  public function getImage():Dynamic;
-} 
+}

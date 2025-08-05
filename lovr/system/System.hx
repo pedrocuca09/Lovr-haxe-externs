@@ -1,19 +1,55 @@
 package lovr.system;
 
-/**
- * System module for OS and window management.
- * https://lovr.org/docs/lovr.system
- */
+@:native("lovr.system")
 extern class System {
-  /**
-   * Gets the name of the operating system.
-   */
-  static function getOS():String;
-
-  /**
-   * Gets the number of CPU cores.
-   */
-  static function getCoreCount():Int;
-
-     
-} 
+  public function getClipboardText():String;
+  public function getCoreCount():Float;
+  public function getMousePosition():Float;
+  public function getMouseX():Float;
+  public function getMouseY():Float;
+  public function getOS():String;
+  public function getWindowDensity():Float;
+  public function getWindowDimensions():Float;
+  public function getWindowHeight():Float;
+  public function getWindowWidth():Float;
+  public function hasKeyRepeat():Bool;
+  public function isKeyDown():Bool;
+  public function isMouseDown():Bool;
+  public function isWindowFocused():Bool;
+  public function isWindowOpen():Bool;
+  public function isWindowVisible():Bool;
+  public function openWindow(?options:Float):Void;
+  public function wasKeyPressed():Bool;
+  public function wasKeyReleased():Bool;
+  public function wasMousePressed():Bool;
+  public function wasMouseReleased():Bool;
+  public function systemGetOS():String;
+  public function systemGetCoreCount():String;
+  public function systemOpenConsole():String;
+  public function systemRequestPermission():String;
+  public function systemOpenWindow():String;
+  public function systemIsWindowOpen():String;
+  public function systemIsWindowVisible():String;
+  public function systemIsWindowFocused():String;
+  public function systemGetWindowWidth():String;
+  public function systemGetWindowHeight():String;
+  public function systemGetWindowDimensions():String;
+  public function systemGetWindowDensity():String;
+  public function systemPollEvents():String;
+  public function systemIsKeyDown():String;
+  public function systemWasKeyPressed():String;
+  public function systemWasKeyReleased():String;
+  public function systemHasKeyRepeat():String;
+  public function systemSetKeyRepeat():String;
+  public function systemGetMouseX():String;
+  public function systemGetMouseY():String;
+  public function systemGetMousePosition():String;
+  public function systemIsMouseDown():String;
+  public function systemWasMousePressed():String;
+  public function systemWasMouseReleased():String;
+  public function systemIsMouseGrabbed():String;
+  public function systemSetMouseGrabbed():String;
+  public function systemGetClipboardText():String;
+  public function systemSetClipboardText():String;
+  public function systemGetScrollDelta():String;
+}

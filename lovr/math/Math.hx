@@ -1,32 +1,37 @@
 package lovr.math;
 
-import lovr.math.Curve;
-import lovr.math.RandomGenerator;
-import lovr.math.Vec2;
-import lovr.math.Vec3;
-import lovr.math.Vec4;
-import lovr.math.Quat;
-import lovr.math.Mat4;
-import haxe.extern.EitherType;
-
-/**
- * Math module for random numbers, noise, and vector math.
- * https://lovr.org/docs/lovr.math
- */
+@:native("lovr.math")
 extern class Math {
-  static function noise(x:Float, ?y:Float, ?z:Float, ?w:Float):Float;
-  static function random(?min:Float, ?max:Float):Float;
-  static function randomNormal(?stddev:Float, ?mean:Float):Float;
-  static function getRandomSeed():Int;
-  static function setRandomSeed(seed:Int):Void;
-  static function gammaToLinear(value:Float):Float;
-  static function linearToGamma(value:Float):Float;
-  static function newVec2(x:Float, y:Float):Vec2;
-  static function newVec3(x:Float, y:Float, z:Float):Vec3;
-  static function newVec4(x:Float, y:Float, z:Float, w:Float):Vec4;
-  static function newQuat(x:Float, y:Float, z:Float, w:Float):Quat;
-  static function newMat4():Mat4;
-  static function newCurve(points:Array<Float>):Curve;
-  static function newRandomGenerator(?seed:Int):RandomGenerator;
-  static function drain():Void;
-} 
+  public function gammaToLinear():Float;
+  public function getRandomSeed():Float;
+  public function linearToGamma():Float;
+  public function mat4():Array<Float>;
+  public function newCurve():Dynamic;
+  public function newMat4():Array<Float>;
+  public function newQuat(?angle:Float):Array<Float>;
+  public function newRandomGenerator():Dynamic;
+  public function newVec2(?x:Float):Array<Float>;
+  public function newVec3(?x:Float):Array<Float>;
+  public function newVec4(?x:Float):Array<Float>;
+  public function noise():Float;
+  public function quat(?angle:Float):Array<Float>;
+  public function random():Float;
+  public function randomNormal(?sigma:Float):Float;
+  public function vec2(?x:Float):Array<Float>;
+  public function vec3(?x:Float):Array<Float>;
+  public function vec4(?x:Float):Array<Float>;
+  public function mathQuat():String;
+  public function mathNewCurve():String;
+  public function mathNewRandomGenerator():String;
+  public function mathNoise():String;
+  public function mathRandom():String;
+  public function mathRandomNormal():String;
+  public function mathGetRandomSeed():String;
+  public function mathSetRandomSeed():String;
+  public function mathGammaToLinear():String;
+  public function mathLinearToGamma():String;
+  public function mathNewQuat():String;
+  public function mathQuat():String;
+  public function mathDrain():String;
+  public function lightUserdataOp():String;
+}

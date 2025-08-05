@@ -1,25 +1,21 @@
 package lovr.math;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a 3D vector.
- * https://lovr.org/docs/Vec3
- */
+@:native("lovr.math.Vec3")
 extern class Vec3 {
-  public var x:Float;
-  public var y:Float;
-  public var z:Float;
-  public function set(x:Float, y:Float, z:Float):Vec3;
-  public function add(v:EitherType<Vec3, Float>):Vec3;
-  public function sub(v:EitherType<Vec3, Float>):Vec3;
-  public function mul(v:EitherType<Vec3, Float>):Vec3;
-  public function div(v:EitherType<Vec3, Float>):Vec3;
-  public function dot(v:Vec3):Float;
-  public function cross(v:Vec3):Vec3;
+  public function add():Array<Float>;
+  public function angle():Float;
+  public function cross():Array<Float>;
+  public function distance():Float;
+  public function div():Array<Float>;
+  public function dot():Float;
+  public function equals():Bool;
   public function length():Float;
-  public function normalize():Vec3;
-  public function distance(v:Vec3):Float;
-  public function lerp(v:Vec3, t:Float):Vec3;
-  public function unpack():Array<Float>;
-} 
+  public function lerp():Array<Float>;
+  public function mul():Array<Float>;
+  public function normalize():Array<Float>;
+  public function rotate():Array<Float>;
+  public function set(?x:Float):Array<Float>;
+  public function sub():Array<Float>;
+  public function transform():Array<Float>;
+  public function unpack():Float;
+}

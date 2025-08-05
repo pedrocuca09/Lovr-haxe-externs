@@ -1,12 +1,10 @@
 package lovr.physics;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a convex shape for physics.
- * https://lovr.org/docs/ConvexShape
- */
+@:native("lovr.physics.ConvexShape")
 extern class ConvexShape {
-  public function getPointCount():Int;
-  public function getPoint(index:Int):Array<Float>;
-} 
+  public function getFace():Dynamic;
+  public function getFaceCount():Float;
+  public function getPoint():Float;
+  public function getPointCount():Float;
+  public function getScale():Float;
+}

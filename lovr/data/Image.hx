@@ -1,16 +1,13 @@
 package lovr.data;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents an image loaded from a file or memory.
- * https://lovr.org/docs/Image
- */
+@:native("lovr.data.Image")
 extern class Image {
-  public function getWidth():Int;
-  public function getHeight():Int;
+  public function encode():lovr.data.Blob;
+  public function getBlob():lovr.data.Blob;
+  public function getDimensions():Float;
   public function getFormat():String;
-  public function getDimensions():Array<Int>;
-  public function getPixel(x:Int, y:Int):Array<Int>;
-  public function setPixel(x:Int, y:Int, color:Array<Int>):Void;
-} 
+  public function getHeight():Float;
+  public function getPixel():Float;
+  public function getPointer(?level:Float):Dynamic;
+  public function getWidth():Float;
+}

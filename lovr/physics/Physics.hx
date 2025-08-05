@@ -1,30 +1,32 @@
 package lovr.physics;
 
-import lovr.physics.World;
-import lovr.physics.Collider;
-import lovr.physics.Contact;
-import lovr.physics.BoxShape;
-import lovr.physics.SphereShape;
-import lovr.physics.CapsuleShape;
-import lovr.physics.CylinderShape;
-import lovr.physics.ConvexShape;
-import lovr.physics.MeshShape;
-import lovr.physics.TerrainShape;
-import lovr.physics.WeldJoint;
-import lovr.physics.BallJoint;
-import lovr.physics.ConeJoint;
-import lovr.physics.DistanceJoint;
-import lovr.physics.HingeJoint;
-import lovr.physics.SliderJoint;
-import haxe.extern.EitherType;
-
-/**
- * Physics module for simulation and collision.
- * https://lovr.org/docs/lovr.physics
- */
+@:native("lovr.physics")
 extern class Physics {
-  static function newWorld():World;
-  static function getGravity():Array<Float>;
-  static function setGravity(x:Float, y:Float, z:Float):Void;
-  static function getWorlds():Array<World>;
-} 
+  public function newBallJoint():Dynamic;
+  public function newBoxShape(?width:Float):Dynamic;
+  public function newCapsuleShape(?radius:Float):Dynamic;
+  public function newConeJoint():Dynamic;
+  public function newConvexShape():Dynamic;
+  public function newCylinderShape(?radius:Float):Dynamic;
+  public function newDistanceJoint():Dynamic;
+  public function newHingeJoint():Dynamic;
+  public function newMeshShape():Dynamic;
+  public function newSliderJoint():Dynamic;
+  public function newSphereShape(?radius:Float):Dynamic;
+  public function newWeldJoint():Dynamic;
+  public function newWorld():lovr.physics.World;
+  public function physicsNewWorld(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewBoxShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewSphereShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewCapsuleShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewCylinderShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewConvexShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewMeshShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewTerrainShape(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewWeldJoint(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewBallJoint(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewConeJoint(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewDistanceJoint(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewHingeJoint(arg0:Dynamic, arg1:Dynamic):Dynamic;
+  public function physicsNewSliderJoint(arg0:Dynamic, arg1:Dynamic):Dynamic;
+}

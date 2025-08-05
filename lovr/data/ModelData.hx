@@ -1,25 +1,56 @@
 package lovr.data;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents model data loaded from a file or memory.
- * https://lovr.org/docs/ModelData
- */
+@:native("lovr.data.ModelData")
 extern class ModelData {
-  public function getMeshCount():Int;
-  public function getMaterialCount():Int;
-  public function getMesh(index:Int):Dynamic;
-  public function getMaterial(index:Int):Dynamic;
-  public function getNodeCount():Int;
-  public function getNodeName(index:Int):String;
-  public function getNodeParent(index:Int):Int;
-  public function getNodeChildren(index:Int):Array<Int>;
-  public function getNodePosition(index:Int):Array<Float>;
-  public function getNodeOrientation(index:Int):Array<Float>;
-  public function getNodeScale(index:Int):Array<Float>;
-  public function getNodeTransform(index:Int):Array<Float>;
-  public function getTriangles(mesh:Int):Array<Int>;
-  public function getVertexCount(mesh:Int):Int;
-  public function getVertex(mesh:Int, index:Int):Array<Float>;
-} 
+  public function getAnimationChannelCount():Float;
+  public function getAnimationCount():Float;
+  public function getAnimationDuration():Float;
+  public function getAnimationKeyframe():Float;
+  public function getAnimationKeyframeCount():Float;
+  public function getAnimationName():String;
+  public function getAnimationNode():Float;
+  public function getAnimationProperty():Dynamic;
+  public function getAnimationSmoothMode():Dynamic;
+  public function getBlendShapeCount():Float;
+  public function getBlendShapeName():String;
+  public function getBlob():lovr.data.Blob;
+  public function getBlobCount():Float;
+  public function getBoundingBox():Float;
+  public function getBoundingSphere():Float;
+  public function getCenter():Float;
+  public function getDepth():Float;
+  public function getDimensions():Float;
+  public function getHeight():Float;
+  public function getImage():lovr.data.Image;
+  public function getImageCount():Float;
+  public function getMaterial():Dynamic;
+  public function getMaterialCount():Float;
+  public function getMaterialName():String;
+  public function getMeshCount():Float;
+  public function getMeshDrawMode():Dynamic;
+  public function getMeshIndex():Float;
+  public function getMeshIndexCount():Float;
+  public function getMeshIndexFormat():Dynamic;
+  public function getMeshMaterial():Float;
+  public function getMeshVertexCount():Float;
+  public function getMeshVertexFormat():Dynamic;
+  public function getMetadata():String;
+  public function getNodeChildren():Dynamic;
+  public function getNodeCount():Float;
+  public function getNodeMeshes():Dynamic;
+  public function getNodeName():String;
+  public function getNodeOrientation():Float;
+  public function getNodeParent():Float;
+  public function getNodePose():Float;
+  public function getNodePosition():Float;
+  public function getNodeScale():Float;
+  public function getNodeSkin():Float;
+  public function getNodeTransform():Float;
+  public function getRootNode():Float;
+  public function getSkinCount():Float;
+  public function getSkinJoints():Dynamic;
+  public function getTriangleCount():Float;
+  public function getTriangles():Dynamic;
+  public function getVertexCount():Float;
+  public function getWidth():Float;
+}

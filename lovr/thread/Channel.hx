@@ -1,19 +1,10 @@
 package lovr.thread;
 
-/**
- * Represents a thread communication channel.
- * https://lovr.org/docs/Channel
- */
+@:native("lovr.thread.Channel")
 extern class Channel {
-  /**
-   * Pushes a value onto the channel.
-   */
-  public function push(value:Dynamic):Void;
-
-  /**
-   * Pops a value from the channel.
-   */
-  public function pop():Dynamic;
-
-     
-} 
+  public function getCount():Float;
+  public function hasRead():Bool;
+  public function peek():Dynamic;
+  public function pop(?wait:Float):Dynamic;
+  public function push():Float;
+}

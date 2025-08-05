@@ -1,14 +1,18 @@
 package lovr.physics;
 
-/**
- * Represents a slider joint for physics.
- * https://lovr.org/docs/SliderJoint
- */
+@:native("lovr.physics.SliderJoint")
 extern class SliderJoint {
-  /**
-   * Gets the anchor point of the joint.
-   */
-  public function getAnchor():Array<Float>;
-
-     
-} 
+  public function getAxis():Float;
+  public function getFriction():Float;
+  public function getLimits():Float;
+  public function getMaxMotorForce():Float;
+  public function getMotorForce():Float;
+  public function getMotorMode():Dynamic;
+  public function getMotorSpring():Float;
+  public function getMotorTarget():Float;
+  public function getPosition():Float;
+  public function getSpring():Float;
+  public function setMaxMotorForce(?positive:Float):Void;
+  public function setMotorSpring(?frequency:Float):Void;
+  public function setSpring(?frequency:Float):Void;
+}

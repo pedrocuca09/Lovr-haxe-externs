@@ -1,33 +1,12 @@
 package lovr.event;
 
-/**
- * Event module for pushing and polling events.
- * https://lovr.org/docs/lovr.event
- */
+@:native("lovr.event")
 extern class Event {
-  /**
-   * Clears all queued events.
-   */
-  static function clear():Void;
-
-  /**
-   * Polls for the next event.
-   * Returns the event name and arguments, or null if no events are queued.
-   */
-  static function poll():Null<Array<Dynamic>>;
-
-  /**
-   * Pushes a new event onto the event queue.
-   */
-  static function push(name:String, ...args:Dynamic):Void;
-
-  /**
-   * Quits the application.
-   */
-  static function quit():Void;
-
-  /**
-   * Restarts the application.
-   */
-  static function restart():Void;
-} 
+  public function poll():Dynamic;
+  public function quit(?code:Float):Void;
+  public function eventClear():String;
+  public function eventPoll():String;
+  public function eventPush():String;
+  public function eventQuit():String;
+  public function eventRestart():String;
+}

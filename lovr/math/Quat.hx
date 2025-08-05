@@ -1,21 +1,16 @@
 package lovr.math;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a quaternion.
- * https://lovr.org/docs/Quat
- */
+@:native("lovr.math.Quat")
 extern class Quat {
-  public var x:Float;
-  public var y:Float;
-  public var z:Float;
-  public var w:Float;
-  public function set(x:Float, y:Float, z:Float, w:Float):Quat;
-  public function mul(q:Quat):Quat;
-  public function normalize():Quat;
+  public function conjugate():Array<Float>;
+  public function direction():Array<Float>;
+  public function equals():Bool;
+  public function getEuler():Float;
   public function length():Float;
-  public function conjugate():Quat;
-  public function slerp(q:Quat, t:Float):Quat;
-  public function unpack():Array<Float>;
-} 
+  public function mul():Array<Float>;
+  public function normalize():Array<Float>;
+  public function set(?angle:Float):Array<Float>;
+  public function setEuler():Array<Float>;
+  public function slerp():Array<Float>;
+  public function unpack(?raw:Bool):Float;
+}

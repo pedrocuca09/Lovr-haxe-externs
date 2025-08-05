@@ -1,14 +1,9 @@
 package lovr.physics;
 
-/**
- * Represents a distance joint for physics.
- * https://lovr.org/docs/DistanceJoint
- */
+@:native("lovr.physics.DistanceJoint")
 extern class DistanceJoint {
-  /**
-   * Gets the anchor points of the joint.
-   */
-  public function getAnchors():Array<Array<Float>>;
-
-     
-} 
+  public function getLimits():Float;
+  public function getSpring():Float;
+  public function setLimits(?min:Float):Void;
+  public function setSpring(?frequency:Float):Void;
+}

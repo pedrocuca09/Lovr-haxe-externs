@@ -1,14 +1,11 @@
 package lovr.math;
 
-/**
- * Represents a curve for interpolation.
- * https://lovr.org/docs/Curve
- */
+@:native("lovr.math.Curve")
 extern class Curve {
-  /**
-   * Gets the number of control points in the curve.
-   */
-  public function getPointCount():Int;
-
-     
-} 
+  public function evaluate():Float;
+  public function getPoint():Float;
+  public function getPointCount():Float;
+  public function getTangent():Float;
+  public function render(?n:Float):Dynamic;
+  public function slice():Dynamic;
+}

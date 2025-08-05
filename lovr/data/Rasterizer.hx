@@ -1,19 +1,20 @@
 package lovr.data;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a font rasterizer.
- * https://lovr.org/docs/Rasterizer
- */
+@:native("lovr.data.Rasterizer")
 extern class Rasterizer {
-  public function getWidth():Int;
-  public function getHeight():Int;
-  public function getGlyphCount():Int;
-  public function getGlyphData(glyph:Int):Dynamic;
-  public function getAdvance(glyph:Int):Float;
+  public function getAdvance():Float;
   public function getAscent():Float;
+  public function getBearing():Float;
+  public function getBoundingBox():Float;
+  public function getCurves():Dynamic;
   public function getDescent():Float;
-  public function getLineHeight():Float;
-  public function setLineHeight(height:Float):Void;
-} 
+  public function getDimensions():Float;
+  public function getFontSize():Float;
+  public function getGlyphCount():Float;
+  public function getHeight():Float;
+  public function getKerning():Float;
+  public function getLeading():Float;
+  public function getWidth():Float;
+  public function hasGlyphs():Bool;
+  public function newImage():lovr.data.Image;
+}

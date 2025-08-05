@@ -1,17 +1,13 @@
 package lovr.physics;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a contact between two colliders.
- * https://lovr.org/docs/Contact
- */
+@:native("lovr.physics.Contact")
 extern class Contact {
-  public function getPosition():Array<Float>;
-  public function getColliders():Array<Collider>;
+  public function getColliders():lovr.physics.Collider;
   public function getFriction():Float;
-  public function setFriction(friction:Float):Void;
+  public function getNormal():Float;
+  public function getOverlap():Float;
   public function getRestitution():Float;
-  public function setRestitution(restitution:Float):Void;
-  public function isTouching():Bool;
-} 
+  public function getShapes():lovr.physics.Shape;
+  public function getSurfaceVelocity():Float;
+  public function isEnabled():Bool;
+}

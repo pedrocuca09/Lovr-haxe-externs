@@ -1,33 +1,41 @@
 package lovr.physics;
 
-import haxe.extern.EitherType;
-
-/**
- * Represents a physics collider.
- * https://lovr.org/docs/Collider
- */
+@:native("lovr.physics.Collider")
 extern class Collider {
-  public function getPosition():Array<Float>;
-  public function setPosition(x:Float, y:Float, z:Float):Void;
-  public function getWorld():World;
-  public function getShapes():Array<Dynamic>;
-  public function getOrientation():Array<Float>;
-  public function setOrientation(x:Float, y:Float, z:Float, w:Float):Void;
-  public function getLinearVelocity():Array<Float>;
-  public function setLinearVelocity(x:Float, y:Float, z:Float):Void;
-  public function getAngularVelocity():Array<Float>;
-  public function setAngularVelocity(x:Float, y:Float, z:Float):Void;
-  public function applyForce(x:Float, y:Float, z:Float):Void;
-  public function applyTorque(x:Float, y:Float, z:Float):Void;
-  public function getMass():Float;
-  public function setMass(mass:Float):Void;
-  public function getRestitution():Float;
-  public function setRestitution(restitution:Float):Void;
+  public function getAABB():Float;
+  public function getAngularDamping():Float;
+  public function getAngularVelocity():Float;
+  public function getAutomaticMass():Bool;
+  public function getCenterOfMass():Float;
+  public function getDegreesOfFreedom():String;
   public function getFriction():Float;
-  public function setFriction(friction:Float):Void;
-  public function isKinematic():Bool;
-  public function setKinematic(kinematic:Bool):Void;
+  public function getGravityScale():Float;
+  public function getInertia():Float;
+  public function getJoints():Dynamic;
+  public function getLinearDamping():Float;
+  public function getLinearVelocity():Float;
+  public function getLinearVelocityFromLocalPoint():Float;
+  public function getLinearVelocityFromWorldPoint():Float;
+  public function getLocalPoint():Float;
+  public function getLocalVector():Float;
+  public function getMass():Float;
+  public function getOrientation():Float;
+  public function getPose():Float;
+  public function getPosition():Float;
+  public function getRestitution():Float;
+  public function getShape():lovr.physics.Shape;
+  public function getShapes():Dynamic;
+  public function getTag():String;
+  public function getUserData():Dynamic;
+  public function getWorld():lovr.physics.World;
+  public function getWorldPoint():Float;
+  public function getWorldVector():Float;
   public function isAwake():Bool;
-  public function setAwake(awake:Bool):Void;
-  public function destroy():Void;
-} 
+  public function isContinuous():Bool;
+  public function isDestroyed():Bool;
+  public function isEnabled():Bool;
+  public function isGravityIgnored():Bool;
+  public function isKinematic():Bool;
+  public function isSensor():Bool;
+  public function isSleepingAllowed():Bool;
+}
