@@ -9,7 +9,7 @@ import re
 import glob
 from typing import Dict, List, Optional, Tuple
 
-class ImprovedLovrExternGenerator:
+class ExternsGenerator:
     def __init__(self):
         self.docs_path = "lovr-docs/api/lovr"
         self.source_path = "lovr-dev/src/api"
@@ -260,7 +260,7 @@ extern class {class_name} {{
   public function pop():Void;
   
   // Drawing methods
-  public function cube(?x:Float, ?y:Float, ?z:Float, ?size:Float):Void;
+  public function cube(?x:Float, ?y:Float, ?z:Float, ?size:Float, ?angle:Float, ?ax:Float, ?ay:Float, ?az:Float, ?style:String):Void;
   public function sphere(x:Float, y:Float, z:Float, radius:Float):Void;
   public function box(x:Float, y:Float, z:Float, width:Float, height:Float, depth:Float):Void;
   public function plane(x:Float, y:Float, z:Float, width:Float, height:Float):Void;
@@ -367,11 +367,12 @@ extern class {class_name} {{
         if arg_match:
             arg_section = arg_match.group(1)
             
-            # Parse individual arguments
-            arg_pattern = r'(\w+)\s*=\s*\{[^}]*type\s*=\s*["\']([^"\']+)["\'][^}]*default\s*=\s*["\']([^"\']+)["\']'
-            matches = re.findall(arg_pattern, arg_section)
+            # Parse individual arguments - look for both with and without default values
+            # Pattern for arguments with default values
+            arg_pattern_with_default = r'(\w+)\s*=\s*\{[^}]*type\s*=\s*["\']([^"\']+)["\'][^}]*default\s*=\s*["\']([^"\']+)["\']'
+            matches_with_default = re.findall(arg_pattern_with_default, arg_section)
             
-            for match in matches:
+            for match in matches_with_default:
                 arg_name = match[0]
                 arg_type = match[1]
                 arg_default = match[2]
@@ -380,6 +381,21 @@ extern class {class_name} {{
                     "default": arg_default,
                     "description": ""
                 }
+            
+            # Pattern for arguments without default values
+            arg_pattern_without_default = r'(\w+)\s*=\s*\{[^}]*type\s*=\s*["\']([^"\']+)["\'][^}]*description\s*='
+            matches_without_default = re.findall(arg_pattern_without_default, arg_section)
+            
+            for match in matches_without_default:
+                arg_name = match[0]
+                arg_type = match[1]
+                # Only add if not already added by the with_default pattern
+                if arg_name not in arguments:
+                    arguments[arg_name] = {
+                        "type": arg_type,
+                        "default": None,
+                        "description": ""
+                    }
         
         return arguments
 
@@ -412,7 +428,7 @@ extern class {class_name} {{
         
         for arg_name, arg_info in arguments.items():
             haxe_type = self.type_map.get(arg_info["type"], "Dynamic")
-            if arg_info.get("default") and arg_info["default"] != "nil":
+            if arg_info.get("default") and arg_info["default"] != "nil" and arg_info["default"] is not None:
                 param_list.append(f"?{arg_name}:{haxe_type}")
             else:
                 param_list.append(f"{arg_name}:{haxe_type}")
@@ -503,7 +519,7 @@ extern class {class_name} {{
 
 def main():
     """Main entry point."""
-    generator = ImprovedLovrExternGenerator()
+    generator = ExternsGenerator()
     generator.generate_externs()
 
 if __name__ == "__main__":
