@@ -6,6 +6,6 @@ extern class Curve {
   public function getPoint():Float;
   public function getPointCount():Float;
   public function getTangent():Float;
-  public function render(?n:Float):Dynamic;
+  public function render():Dynamic;
   public function slice():Dynamic;
 }

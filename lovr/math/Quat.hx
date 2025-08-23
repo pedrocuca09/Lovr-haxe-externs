@@ -9,8 +9,8 @@ extern class Quat {
   public function length():Float;
   public function mul():Array<Float>;
   public function normalize():Array<Float>;
-  public function set(?angle:Float):Array<Float>;
+  public function set():Array<Float>;
   public function setEuler():Array<Float>;
   public function slerp():Array<Float>;
-  public function unpack(?raw:Bool):Float;
+  public function unpack():Float;
 }

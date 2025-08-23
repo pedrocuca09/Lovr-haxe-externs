@@ -8,6 +8,6 @@ extern class Image {
   public function getFormat():String;
   public function getHeight():Float;
   public function getPixel():Float;
-  public function getPointer(?level:Float):Dynamic;
+  public function getPointer():Dynamic;
   public function getWidth():Float;
 }

@@ -12,7 +12,7 @@ extern class Vec4 {
   public function lerp():Array<Float>;
   public function mul():Array<Float>;
   public function normalize():Array<Float>;
-  public function set(?x:Float):Array<Float>;
+  public function set():Array<Float>;
   public function sub():Array<Float>;
   public function transform():Array<Float>;
   public function unpack():Float;

@@ -12,7 +12,4 @@ extern class SliderJoint {
   public function getMotorTarget():Float;
   public function getPosition():Float;
   public function getSpring():Float;
-  public function setMaxMotorForce(?positive:Float):Void;
-  public function setMotorSpring(?frequency:Float):Void;
-  public function setSpring(?frequency:Float):Void;
 }

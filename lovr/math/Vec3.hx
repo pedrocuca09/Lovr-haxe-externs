@@ -14,7 +14,7 @@ extern class Vec3 {
   public function mul():Array<Float>;
   public function normalize():Array<Float>;
   public function rotate():Array<Float>;
-  public function set(?x:Float):Array<Float>;
+  public function set():Array<Float>;
   public function sub():Array<Float>;
   public function transform():Array<Float>;
   public function unpack():Float;

@@ -13,5 +13,5 @@ extern class Mesh {
   public function getVertexCount():Float;
   public function getVertexFormat():String;
   public function getVertexStride():Float;
-  public function getVertices(?index:Float):Dynamic;
+  public function getVertices():Dynamic;
 }

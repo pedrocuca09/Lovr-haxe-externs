@@ -11,5 +11,4 @@ extern class Layer {
   public function getPosition():Float;
   public function getTexture():lovr.graphics.Texture;
   public function getViewport():Float;
-  public function setCurve(?curve:Float):Void;
 }

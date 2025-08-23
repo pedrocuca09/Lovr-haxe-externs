@@ -17,13 +17,13 @@ extern class World {
   public function isCollisionEnabledBetween():Bool;
   public function isDestroyed():Bool;
   public function isSleepingAllowed():Bool;
-  public function newBoxCollider(?x:Float):lovr.physics.Collider;
-  public function newCapsuleCollider(?x:Float):lovr.physics.Collider;
+  public function newBoxCollider():lovr.physics.Collider;
+  public function newCapsuleCollider():lovr.physics.Collider;
   public function newCollider():lovr.physics.Collider;
-  public function newConvexCollider(?x:Float):lovr.physics.Collider;
-  public function newCylinderCollider(?x:Float):lovr.physics.Collider;
+  public function newConvexCollider():lovr.physics.Collider;
+  public function newCylinderCollider():lovr.physics.Collider;
   public function newMeshCollider():lovr.physics.Collider;
-  public function newSphereCollider(?x:Float):lovr.physics.Collider;
+  public function newSphereCollider():lovr.physics.Collider;
   public function overlapShape():lovr.physics.Collider;
   public function queryBox():lovr.physics.Collider;
   public function querySphere():lovr.physics.Collider;

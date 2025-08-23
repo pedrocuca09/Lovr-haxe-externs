@@ -21,5 +21,4 @@ extern class Mat4 {
   public function target():Array<Float>;
   public function translate():Array<Float>;
   public function transpose():Array<Float>;
-  public function unpack(?raw:Bool):Void;
 }

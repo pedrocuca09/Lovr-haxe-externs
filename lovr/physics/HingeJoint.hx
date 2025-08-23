@@ -12,7 +12,4 @@ extern class HingeJoint {
   public function getMotorTarget():Float;
   public function getMotorTorque():Float;
   public function getSpring():Float;
-  public function setMaxMotorTorque(?positive:Float):Void;
-  public function setMotorSpring(?frequency:Float):Void;
-  public function setSpring(?frequency:Float):Void;
 }

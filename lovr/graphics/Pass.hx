@@ -3,13 +3,6 @@ package lovr.graphics;
 @:native("lovr.graphics.Pass")
 extern class Pass {
   public function beginTally():Float;
-  public function box(?x:Float):Void;
-  public function capsule(?x:Float):Void;
-  public function circle(?x:Float):Void;
-  public function compute(?x:Float):Void;
-  public function cone(?x:Float):Void;
-  public function cube(?x:Float):Void;
-  public function cylinder(?x:Float):Void;
   public function finishTally():Float;
   public function getCanvas():Dynamic;
   public function getClear():Dynamic;
@@ -22,12 +15,6 @@ extern class Pass {
   public function getViewCount():Float;
   public function getViewPose():Float;
   public function getWidth():Float;
-  public function mesh(vertices:lovr.graphics.Buffer):Void;
-  public function plane(?x:Float):Void;
-  public function roundrect(?x:Float):Void;
-  public function setDepthOffset(?offset:Float):Void;
-  public function sphere(?x:Float):Void;
-  public function torus(?x:Float):Void;
   public function translate(x:Float, y:Float, z:Float):Void;
   public function rotate(angle:Float, ax:Float, ay:Float, az:Float):Void;
   public function scale(x:Float, y:Float, z:Float):Void;
@@ -35,9 +22,19 @@ extern class Pass {
   public function origin():Void;
   public function push():Void;
   public function pop():Void;
+  public function cube(?x:Float, ?y:Float, ?z:Float, ?size:Float, ?angle:Float, ?ax:Float, ?ay:Float, ?az:Float, ?style:String):Void;
+  public function sphere(x:Float, y:Float, z:Float, radius:Float):Void;
+  public function box(x:Float, y:Float, z:Float, width:Float, height:Float, depth:Float):Void;
+  public function plane(x:Float, y:Float, z:Float, width:Float, height:Float):Void;
+  public function circle(x:Float, y:Float, z:Float, radius:Float):Void;
   public function line(x1:Float, y1:Float, z1:Float, x2:Float, y2:Float, z2:Float):Void;
   public function points(points:Array<Float>):Void;
   public function polygon(points:Array<Float>):Void;
+  public function roundrect(x:Float, y:Float, z:Float, width:Float, height:Float, radius:Float):Void;
+  public function capsule(x:Float, y:Float, z:Float, radius:Float, length:Float):Void;
+  public function cone(x:Float, y:Float, z:Float, radius:Float, length:Float):Void;
+  public function cylinder(x:Float, y:Float, z:Float, radius:Float, length:Float):Void;
+  public function torus(x:Float, y:Float, z:Float, radius:Float, tubeRadius:Float):Void;
   public function setColor(r:Float, g:Float, b:Float, ?a:Float):Void;
   public function getColor():Array<Float>;
   public function setMaterial(material:Material):Void;
